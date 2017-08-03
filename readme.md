@@ -24,7 +24,7 @@ Ao copiar o projeto
   biblioteca
   portifolio
   galeria
-  portifolio
+  portifolio_alunos
   cobranca
   lista_de_presenca
   forum_da_turma
