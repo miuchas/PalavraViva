@@ -15,22 +15,22 @@ class CreateUsuariosTable extends Migration
   {
     Schema::create('usuarios', function (Blueprint $table) {
       $table->increments('id');
-      $table->enum('acesso', ['administrador', 'professor', 'monitor', 'aluno']);
-      $table->integer('id_turma')->unsigned();
+      $table->integer('acesso');
+      $table->integer('id_turma')->unsigned()->nullable();
       $table->string('nome');
       $table->string('senha');
+      $table->string('reseta_senha')->nullable();
       $table->string('imagem')->nullable();
       $table->string('email')->unique();
-      $table->string('cpf')->nullable();
-      $table->string('endereço completo')->nullable();
-      $table->string('Cep')->nullable();
-      $table->string('Cidade')->nullable();
-      $table->string('Rua')->nullable();
-      $table->string('Numero')->nullable();
-      $table->string('Complemento')->nullable();
+      $table->string('cpf')->unique()->nullable();
+      $table->string('cep')->nullable();
+      $table->string('cidade')->nullable();
+      $table->string('rua')->nullable();
+      $table->string('numero')->nullable();
+      $table->string('complemento')->nullable();
       $table->integer('telefone')->nullable();
       $table->boolean('mostrar_contato')->default(true);
-      $table->boolean('bolsista')->default(true);
+      $table->boolean('bolsista')->default(false);
       $table->integer('porcentagem')->nullable();
       $table->timestamps();
 

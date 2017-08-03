@@ -8,3 +8,26 @@ Ao copiar o projeto
 
 **Compilador css/js diretamente pelo npm**
 - npm run watch
+
+**Esquema de permissões**
+- administrador - 4
+- professor - 2
+- monitor - 1
+- aluno - 0
+
+<!--
+  Regras:
+  turma
+  usuarios
+  contato
+  monitores
+  biblioteca
+  portifolio
+  galeria
+  portifolio
+  cobranca
+  lista_de_presenca
+  forum_da_turma
+  posts_do_site
+  posts_do_forum
+-->

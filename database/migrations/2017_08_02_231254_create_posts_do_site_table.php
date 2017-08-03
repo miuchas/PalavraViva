@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePortifolioTable extends Migration
+class CreatePostsDoSiteTable extends Migration
 {
   /**
    * Run the migrations.
@@ -13,13 +13,15 @@ class CreatePortifolioTable extends Migration
    */
   public function up()
   {
-    Schema::create('portifolio', function (Blueprint $table) {
+    Schema::create('posts_do_site', function (Blueprint $table) {
       $table->increments('id');
-      $table->string('apresentacoes');
-      $table->string('sinopse')->nullable();
-      $table->string('descricao_evento')->nullable();
-      $table->date('data_apresentacao');
+      $table->integer('id_usuario')->unsigned();
+      $table->string('assunto');
+      $table->string('image');
+      $table->string('mensagem');
       $table->timestamps();
+
+      $table->foreign('id_usuario')->references('id')->on('usuarios');
     });
   }
 
@@ -30,6 +32,6 @@ class CreatePortifolioTable extends Migration
    */
   public function down()
   {
-    Schema::drop('portifolio');
+    Schema::dropIfExists('posts_do_site');
   }
 }

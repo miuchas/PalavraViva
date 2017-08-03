@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePortifolioAlunosTable extends Migration
+class CreateListaDePresencaTable extends Migration
 {
   /**
    * Run the migrations.
@@ -13,13 +13,14 @@ class CreatePortifolioAlunosTable extends Migration
    */
   public function up()
   {
-    Schema::create('portifolio_alunos', function (Blueprint $table) {
+    Schema::create('lista_de_presenca', function (Blueprint $table) {
       $table->increments('id');
-      $table->integer('id_portifolio')->unsigned();
-      $table->integer('id_usuario')->unsigned();
+      $table->integer('id_turma')->unsigned()->nullable();
+      $table->integer('id_usuario')->unsigned()->nullable();
+      $table->boolean('presenca')->default(false);
+      $table->date('data');
       $table->timestamps();
 
-      $table->foreign('id_portifolio')->references('id')->on('portifolio');
       $table->foreign('id_usuario')->references('id')->on('usuarios');
     });
   }
@@ -31,6 +32,6 @@ class CreatePortifolioAlunosTable extends Migration
    */
   public function down()
   {
-    Schema::drop('portifolio_alunos');
+    Schema::dropIfExists('lista_de_presenca');
   }
 }
