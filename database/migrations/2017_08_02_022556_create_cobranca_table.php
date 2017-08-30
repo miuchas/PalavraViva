@@ -19,6 +19,7 @@ class CreateCobrancaTable extends Migration
       $table->integer('valor');
       $table->enum('tipo', ['mensalidade', 'evento']);
       $table->date('data');
+      $table->boolean('pago')->default(false);
       $table->timestamps();
 
       $table->foreign('id_aluno')->references('id')->on('usuarios');
