@@ -11,7 +11,9 @@
     / CSS INCLUDE
     %link#theme{:href => "css/theme-default.css", :rel => "stylesheet", :type => "text/css"}
     / EOF CSS INCLUDE
+
   %body
+
     / START PAGE CONTAINER
     .page-container
       @include('sidebar')
@@ -19,6 +21,7 @@
       .page-content
         @include('topo')
 
+        @yield('link_caminho')
         @yield('corpo')
 
 

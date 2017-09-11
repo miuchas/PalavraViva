@@ -27,6 +27,19 @@
     %li.xn-openable
       %a{:href => "#"}
         %span.fa.fa-files-o
+        %span.xn-text Turmas
+      %ul
+        %li
+          %a{:href => "#"}
+            %span.fa.fa-image
+            Adicionar turma
+        %li
+          %a{:href => "#"}
+            %span.fa.fa-user
+            Editar turmas
+    %li.xn-openable
+      %a{:href => "#"}
+        %span.fa.fa-files-o
         %span.xn-text Controle de frequência
       %ul
         %li
