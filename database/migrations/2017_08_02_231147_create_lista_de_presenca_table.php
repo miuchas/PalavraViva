@@ -15,10 +15,9 @@ class CreateListaDePresencaTable extends Migration
   {
     Schema::create('lista_de_presenca', function (Blueprint $table) {
       $table->increments('id');
+      $table->boolean('presenca')->default(false);
       $table->integer('id_turma')->unsigned()->nullable();
       $table->integer('id_usuario')->unsigned()->nullable();
-      $table->boolean('presenca')->default(false);
-      $table->date('data');
       $table->timestamps();
 
       $table->foreign('id_usuario')->references('id')->on('usuarios');

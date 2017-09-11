@@ -15,8 +15,8 @@ class CreateForumDaTurmaTable extends Migration
   {
     Schema::create('forum_da_turma', function (Blueprint $table) {
       $table->increments('id');
-      $table->integer('id_usuario')->unsigned();
       $table->string('assunto');
+      $table->integer('id_usuario')->unsigned();
       $table->timestamps();
 
       $table->foreign('id_usuario')->references('id')->on('usuarios');

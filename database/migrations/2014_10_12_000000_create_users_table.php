@@ -18,8 +18,24 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('reseta_senha')->nullable();
+            $table->string('imagem')->nullable();
+            $table->string('cpf')->unique()->nullable();
+            $table->string('cep')->nullable();
+            $table->string('cidade')->nullable();
+            $table->string('rua')->nullable();
+            $table->string('numero')->nullable();
+            $table->string('complemento')->nullable();
+            $table->integer('telefone')->nullable();
+            $table->boolean('mostrar_contato')->default(true);
+            $table->boolean('bolsista')->default(false);
+            $table->integer('acesso');
+            $table->integer('porcentagem')->nullable();
+            $table->integer('id_turma')->unsigned()->nullable();
             $table->rememberToken();
             $table->timestamps();
+
+            $table->foreign('id_turma')->references('id')->on('turma');
         });
     }
 

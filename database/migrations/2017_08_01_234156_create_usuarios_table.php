@@ -16,7 +16,6 @@ class CreateUsuariosTable extends Migration
     Schema::create('usuarios', function (Blueprint $table) {
       $table->increments('id');
       $table->integer('acesso');
-      $table->integer('id_turma')->unsigned()->nullable();
       $table->string('nome');
       $table->string('senha');
       $table->string('reseta_senha')->nullable();
@@ -32,6 +31,7 @@ class CreateUsuariosTable extends Migration
       $table->boolean('mostrar_contato')->default(true);
       $table->boolean('bolsista')->default(false);
       $table->integer('porcentagem')->nullable();
+      $table->integer('id_turma')->unsigned()->nullable();
       $table->timestamps();
 
       $table->foreign('id_turma')->references('id')->on('turma');

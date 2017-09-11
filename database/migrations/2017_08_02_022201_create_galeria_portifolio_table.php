@@ -15,9 +15,9 @@ class CreateGaleriaPortifolioTable extends Migration
   {
     Schema::create('galeria_portifolio', function (Blueprint $table) {
       $table->increments('id');
-      $table->integer('id_portifolio')->unsigned();
     	$table->string('imagem');
     	$table->string('descricao')->nullable();
+      $table->integer('id_portifolio')->unsigned();
       $table->timestamps();
 
       $table->foreign('id_portifolio')->references('id')->on('portifolio');

@@ -11,6 +11,12 @@
 |
 */
 
+//auth rpoutes
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
+//register
+
+//any routes
 Route::get('/', function () {
     return view('cadastros_informacoes/turma');
 });

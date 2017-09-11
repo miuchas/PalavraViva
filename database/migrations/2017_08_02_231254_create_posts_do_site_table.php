@@ -15,10 +15,10 @@ class CreatePostsDoSiteTable extends Migration
   {
     Schema::create('posts_do_site', function (Blueprint $table) {
       $table->increments('id');
-      $table->integer('id_usuario')->unsigned();
       $table->string('assunto');
       $table->string('image');
       $table->string('mensagem');
+      $table->integer('id_usuario')->unsigned();
       $table->timestamps();
 
       $table->foreign('id_usuario')->references('id')->on('usuarios');

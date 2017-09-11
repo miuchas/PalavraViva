@@ -15,11 +15,11 @@ class CreateCobrancaTable extends Migration
   {
     Schema::create('cobranca', function (Blueprint $table) {
       $table->increments('id');
-      $table->integer('id_aluno')->unsigned();
       $table->integer('valor');
       $table->enum('tipo', ['mensalidade', 'evento']);
       $table->date('data');
       $table->boolean('pago')->default(false);
+      $table->integer('id_aluno')->unsigned();
       $table->timestamps();
 
       $table->foreign('id_aluno')->references('id')->on('usuarios');
