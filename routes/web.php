@@ -16,6 +16,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 //register
 
+Route::get('/login', 'HomeController@index')->name('home');
+
 //any routes
 Route::get('/', function () {
     return view('cadastros_informacoes/turma');
@@ -27,10 +29,10 @@ Route::group(['prefix' => '/turma'], function(){
   /* Adição */
   Route::post('/adicionar', 'TurmaController@store');
   /* edição */
-  Route::post('/editar', 'TurmaController@store');
+  Route::post('/editar', 'TurmaController@update');
   /* listagem */
-  Route::get('/listar', 'TurmaController@store');
-  Route::get('/listar/{turma}', 'TurmaController@store');
+  Route::get('/listar', 'TurmaController@list');
+  Route::get('/listar/{turma}', 'TurmaController@show');
   /* Exclusão */
   Route::get('/remover/{id}', 'TurmaController@destroy');
 });

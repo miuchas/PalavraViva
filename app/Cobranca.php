@@ -6,8 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cobranca extends Model
 {
+    protected $table = 'cobranca';
+    
     public function inadimplente(){
-      protected $table = 'cobranca';
       /*
         faz uma query basica, ao chamar esta query no controler pode-se adicionar mais parametros
         ex:

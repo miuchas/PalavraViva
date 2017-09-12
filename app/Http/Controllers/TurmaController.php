@@ -22,6 +22,11 @@ class TurmaController extends Controller
     return redirect()->action('TurmaController@index');
   }
 
+  public function update(Turma $turma){
+    Turma::create(request([ 'contato_facebook', 'modolo', 'dia', 'horario' ]));
+    return redirect()->action('TurmaController@index');
+  }
+
   public function list(){
     Turma::create(request([ 'contato_facebook', 'modolo', 'dia', 'horario' ]));
     return redirect()->action('TurmaController@index');
@@ -31,12 +36,7 @@ class TurmaController extends Controller
     return redirect()->action('TurmaController@index', compact('task') );
   }
 
-  public function edit(){
-    Turma::create(request([ 'contato_facebook', 'modolo', 'dia', 'horario' ]));
-    return redirect()->action('TurmaController@index');
-  }
-
-  public function delete(){
+  public function destroy(){
     Turma::create(request([ 'contato_facebook', 'modolo', 'dia', 'horario' ]));
     return redirect()->action('TurmaController@index');
   }
