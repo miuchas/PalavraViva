@@ -33,16 +33,21 @@
         .mb-middle
           .mb-title
             %span.fa.fa-sign-out
-            Log
-            %strong Out
+            Deseja realmente
+            %strong sair
             ?
           .mb-content
-            %p Are you sure you want to log out?
-            %p Press No if youwant to continue work. Press Yes to logout current user.
+            %p Pressione o botão não para continuar conectado.
+            %p Pressione o botão sim para sair do sistema
           .mb-footer
             .pull-right
-              %a.btn.btn-success.btn-lg{:href => "pages-login.html"} Yes
-              %button.btn.btn-default.btn-lg.mb-control-close No
+              %a.btn.btn-success.btn-lg{:href => "/logout", :onclick => "event.preventDefault(); document.getElementById('logout-form').submit();"} Sim
+              %form#logout-form.hidden{ :action => "/logout", :method => "POST" }
+                {{ csrf_field() }}
+
+
+
+              %button.btn.btn-default.btn-lg.mb-control-close Não
     / END MESSAGE BOX
     / START PRELOADS
     %audio#audio-alert{:preload => "auto", :src => "audio/alert.mp3"}

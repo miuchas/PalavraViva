@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.layout_sistema')
 @section('link_caminho')
 %ul.breadcrumb
   %li

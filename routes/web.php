@@ -16,12 +16,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 //register
 
-Route::get('/login', 'HomeController@index')->name('home');
-
 //any routes
-Route::get('/', function () {
-    return view('cadastros_informacoes/turma');
-});
+Route::get('/', 'HomeController@index');
 
 /* ROTAS DA SEÇÃO LOGO */
 Route::group(['prefix' => '/turma'], function(){
