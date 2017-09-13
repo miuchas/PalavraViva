@@ -20,7 +20,7 @@ class CreatePortifolioAlunosTable extends Migration
       $table->timestamps();
 
       $table->foreign('id_portifolio')->references('id')->on('portifolio');
-      $table->foreign('id_usuario')->references('id')->on('usuarios');
+      $table->foreign('id_usuario')->references('id')->on('users');
     });
   }
 

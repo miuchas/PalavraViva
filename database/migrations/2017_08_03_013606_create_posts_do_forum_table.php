@@ -20,7 +20,7 @@ class CreatePostsDoForumTable extends Migration
       $table->integer('id_topico')->unsigned();
       $table->timestamps();
 
-      $table->foreign('id_usuario')->references('id')->on('usuarios');
+      $table->foreign('id_usuario')->references('id')->on('users');
       $table->foreign('id_topico')->references('id')->on('posts_do_forum');
     });
   }

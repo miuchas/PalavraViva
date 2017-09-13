@@ -26,16 +26,16 @@ class CreateUsersTable extends Migration
             $table->string('rua')->nullable();
             $table->string('numero')->nullable();
             $table->string('complemento')->nullable();
-            $table->integer('telefone')->nullable();
+            $table->string('telefone')->nullable();
             $table->boolean('mostrar_contato')->default(true);
             $table->boolean('bolsista')->default(false);
-            $table->integer('acesso');
+            $table->integer('acesso')->default(0);
             $table->integer('porcentagem')->nullable();
             $table->integer('id_turma')->unsigned()->nullable();
             $table->rememberToken();
             $table->timestamps();
 
-            $table->foreign('id_turma')->references('id')->on('turma');
+            // $table->foreign('id_turma')->references('id')->on('turma');
         });
     }
 

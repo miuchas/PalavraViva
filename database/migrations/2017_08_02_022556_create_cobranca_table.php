@@ -22,7 +22,7 @@ class CreateCobrancaTable extends Migration
       $table->integer('id_aluno')->unsigned();
       $table->timestamps();
 
-      $table->foreign('id_aluno')->references('id')->on('usuarios');
+      $table->foreign('id_aluno')->references('id')->on('users');
     });
   }
 
