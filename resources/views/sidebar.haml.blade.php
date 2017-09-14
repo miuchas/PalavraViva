@@ -5,10 +5,10 @@
       %a.x-navigation-control{:href => "#"}
     %li.xn-profile
       %a.profile-mini{:href => "#"}
-        %img{:alt => "John Doe", :src => "assets/images/users/avatar.jpg"}/
+        %img{:alt => "John Doe", :src => "/assets/images/users/avatar.jpg"}/
       .profile
         .profile-image
-          %img{:alt => "John Doe", :src => "assets/images/users/avatar.jpg"}/
+          %img{:alt => "John Doe", :src => "/assets/images/users/avatar.jpg"}/
         .profile-data
           .profile-data-name John Doe
           .profile-data-title Web Developer/Designer

@@ -19,10 +19,6 @@
           .panel-heading
             %h3.panel-title
               %strong Turma
-            %ul.panel-controls
-              %li
-                %a.panel-remove{:href => "#"}
-                  %span.fa.fa-times
           .panel-body
             %p Cadastrar Turma
           .panel-body

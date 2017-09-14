@@ -14,7 +14,7 @@ class TurmaController extends Controller
   }
 
   public function index(){
-    return view('cadastros_informacoes.formulario_turma');
+    return view('turma.formulario_turma');
   }
 
   public function store(){
@@ -28,8 +28,8 @@ class TurmaController extends Controller
   }
 
   public function list(){
-    Turma::create(request([ 'contato_facebook', 'modolo', 'dia', 'horario' ]));
-    return redirect()->action('TurmaController@index');
+    $turmas = Turma::all();
+    return view('turma.listar_turma', compact('turmas'));
   }
 
   public function show(Turma $turma){

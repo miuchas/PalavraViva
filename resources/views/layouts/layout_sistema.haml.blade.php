@@ -9,7 +9,7 @@
     %link{:href => "favicon.ico", :rel => "icon", :type => "image/x-icon"}
     / END META SECTION
     / CSS INCLUDE
-    %link#theme{:href => "css/theme-default.css", :rel => "stylesheet", :type => "text/css"}
+    %link#theme{:href => "/css/theme-default.css", :rel => "stylesheet", :type => "text/css"}
     / EOF CSS INCLUDE
 
   %body
@@ -50,34 +50,34 @@
               %button.btn.btn-default.btn-lg.mb-control-close Não
     / END MESSAGE BOX
     / START PRELOADS
-    %audio#audio-alert{:preload => "auto", :src => "audio/alert.mp3"}
-    %audio#audio-fail{:preload => "auto", :src => "audio/fail.mp3"}
+    %audio#audio-alert{:preload => "auto", :src => "/audio/alert.mp3"}
+    %audio#audio-fail{:preload => "auto", :src => "/audio/fail.mp3"}
     / END PRELOADS
     / START SCRIPTS
     / START PLUGINS
-    %script{:src => "js/plugins/jquery/jquery.min.js", :type => "text/javascript"}
-    %script{:src => "js/plugins/jquery/jquery-ui.min.js", :type => "text/javascript"}
-    %script{:src => "js/plugins/bootstrap/bootstrap.min.js", :type => "text/javascript"}
+    %script{:src => "/js/plugins/jquery/jquery.min.js", :type => "text/javascript"}
+    %script{:src => "/js/plugins/jquery/jquery-ui.min.js", :type => "text/javascript"}
+    %script{:src => "/js/plugins/bootstrap/bootstrap.min.js", :type => "text/javascript"}
 
     / END PLUGINS
     / START THIS PAGE PLUGINS
-    %script{:src => "js/plugins/icheck/icheck.min.js", :type => "text/javascript"}
-    %script{:src => "js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js", :type => "text/javascript"}
-    %script{:src => "js/plugins/scrolltotop/scrolltopcontrol.js", :type => "text/javascript"}
-    %script{:src => "js/plugins/morris/raphael-min.js", :type => "text/javascript"}
-    %script{:src => "js/plugins/morris/morris.min.js", :type => "text/javascript"}
-    %script{:src => "js/plugins/rickshaw/d3.v3.js", :type => "text/javascript"}
-    %script{:src => "js/plugins/rickshaw/rickshaw.min.js", :type => "text/javascript"}
-    %script{:src => "js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js", :type => "text/javascript"}
-    %script{:src => "js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js", :type => "text/javascript"}
-    %script{:src => "js/plugins/bootstrap/bootstrap-datepicker.js", :type => "text/javascript"}
-    %script{:src => "js/plugins/owl/owl.carousel.min.js", :type => "text/javascript"}
-    %script{:src => "js/plugins/moment.min.js", :type => "text/javascript"}
-    %script{:src => "js/plugins/daterangepicker/daterangepicker.js", :type => "text/javascript"}
-    %script{:src => "js/plugins/bootstrap/bootstrap-file-input.js", :type => "text/javascript"}
-    %script{:src => "js/plugins/bootstrap/bootstrap-select.js", :type => "text/javascript"}
-    %script{:src => "js/plugins/tagsinput/jquery.tagsinput.min.js", :type => "text/javascript"}
+    %script{:src => "/js/plugins/icheck/icheck.min.js", :type => "text/javascript"}
+    %script{:src => "/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js", :type => "text/javascript"}
+    %script{:src => "/js/plugins/scrolltotop/scrolltopcontrol.js", :type => "text/javascript"}
+    %script{:src => "/js/plugins/morris/raphael-min.js", :type => "text/javascript"}
+    %script{:src => "/js/plugins/morris/morris.min.js", :type => "text/javascript"}
+    %script{:src => "/js/plugins/rickshaw/d3.v3.js", :type => "text/javascript"}
+    %script{:src => "/js/plugins/rickshaw/rickshaw.min.js", :type => "text/javascript"}
+    %script{:src => "/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js", :type => "text/javascript"}
+    %script{:src => "/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js", :type => "text/javascript"}
+    %script{:src => "/js/plugins/bootstrap/bootstrap-datepicker.js", :type => "text/javascript"}
+    %script{:src => "/js/plugins/owl/owl.carousel.min.js", :type => "text/javascript"}
+    %script{:src => "/js/plugins/moment.min.js", :type => "text/javascript"}
+    %script{:src => "/js/plugins/daterangepicker/daterangepicker.js", :type => "text/javascript"}
+    %script{:src => "/js/plugins/bootstrap/bootstrap-file-input.js", :type => "text/javascript"}
+    %script{:src => "/js/plugins/bootstrap/bootstrap-select.js", :type => "text/javascript"}
+    %script{:src => "/js/plugins/tagsinput/jquery.tagsinput.min.js", :type => "text/javascript"}
     / END THIS PAGE PLUGINS
     / START TEMPLATE
-    %script{:src => "js/plugins.js", :type => "text/javascript"}
-    %script{:src => "js/actions.js", :type => "text/javascript"}
+    %script{:src => "/js/plugins.js", :type => "text/javascript"}
+    %script{:src => "/js/actions.js", :type => "text/javascript"}
