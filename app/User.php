@@ -11,13 +11,13 @@ class User extends Authenticatable
 
     protected $fillable = [
         'name', 'email', 'password',
-        'reseta_senha', 'imagem', 'cep', 'cidade', 'rua', 'numero',
+        'reseta_senha', 'cpf', 'imagem', 'cep', 'cidade', 'rua', 'numero',
         'complemento', 'telefone', 'mostrar_contato', 'bolsista', 'acesso',
         'porcentagem', 'id_turma',
       ];
 
     protected $hidden = [
-        'password', 'remember_token', 'cpf',
+        'password', 'remember_token',
     ];
 
     public function turma(){

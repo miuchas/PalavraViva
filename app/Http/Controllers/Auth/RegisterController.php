@@ -48,9 +48,15 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required',
-            'email' => 'required|unique:users',
-            'password' => 'required|confirmed',
+          'name' => 'required|string|max:255',
+          'email' => 'required|string|email|max:255|unique:users',
+          'password' => 'required|string|min:6|confirmed',
+          'cpf' => 'required|string|min:11|unique:users',
+          'cep' => 'required|string|min:8',
+          'cidade' => 'required|string',
+          'rua' => 'required|string',
+          'numero' => 'required|string',
+          'telefone' => 'required',
         ]);
     }
 
@@ -63,17 +69,17 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-            'imagem' => $data['imagem'],
-            'cpf' => $data['cpf'],
-            'cep' => $data['cep'],
-            'cidade' => $data['cidade'],
-            'rua' => $data['rua'],
-            'numero' => $data['numero'],
-            'complemento' => $data['complemento'],
-            'telefone' => $data['telefone']
+          'name' => $data['name'],
+          'email' => $data['email'],
+          'password' => bcrypt($data['password']),
+          'cpf' => $data['cpf'],
+          'imagem' => $data['imagem'],
+          'cep' => $data['cep'],
+          'cidade' => $data['cidade'],
+          'rua' => $data['rua'],
+          'numero' => $data['numero'],
+          'complemento' => $data['complemento'],
+          'telefone' => $data['telefone']
         ]);
     }
 }

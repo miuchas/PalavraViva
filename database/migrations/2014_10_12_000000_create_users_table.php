@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('reseta_senha')->nullable();
             $table->string('imagem')->nullable();
-            $table->string('cpf')->unique()->nullable();
+            $table->string('cpf')->unique();
             $table->string('cep')->nullable();
             $table->string('cidade')->nullable();
             $table->string('rua')->nullable();
@@ -31,6 +31,7 @@ class CreateUsersTable extends Migration
             $table->boolean('bolsista')->default(false);
             $table->integer('acesso')->default(0);
             $table->integer('porcentagem')->nullable();
+            $table->boolean('ativo')->default(0);
             $table->integer('id_turma')->unsigned()->nullable();
             $table->rememberToken();
             $table->timestamps();
