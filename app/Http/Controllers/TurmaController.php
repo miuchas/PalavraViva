@@ -32,7 +32,7 @@ class TurmaController extends Controller
   }
 
   public function show(Turma $turma){
-    return redirect()->action('TurmaController@index', compact('task') );
+    return view('turma.editar_turma', compact('turma'));
   }
 
   public function destroy(){

@@ -68,14 +68,6 @@
                     %span.glyphicon.glyphicon-time
                   %input.form-control.timepicker{:type => "text", :name=>"horario"}
                 %span.help-block Horario de aula da turma
-            -# .form-group
-            -#   %label.col-md-3.col-xs-12.control-label Horario
-            -#   .col-md-6.col-xs-12
-            -#     .input-group
-            -#       %span.input-group-addon
-            -#         %span.fa.fa-clock-o
-            -#       %input.form-control{:type => "text", :name=>"horario"}
-            -#     %span.help-block Horario de aula da turma
 
           .panel-footer
             %button.btn.btn-default Limpar formulario

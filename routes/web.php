@@ -27,7 +27,7 @@ Route::group(['prefix' => '/turma'], function(){
   Route::post('/editar', 'TurmaController@update');
   /* listagem */
   Route::get('/listar', 'TurmaController@list');
-  Route::get('/listar/{turma}', 'TurmaController@show');
+  Route::get('/listar/{turma?}', 'TurmaController@show');
   /* Exclusão */
-  Route::get('/remover/{id}', 'TurmaController@destroy');
+  Route::get('/remover/{id?}', 'TurmaController@destroy');
 });
