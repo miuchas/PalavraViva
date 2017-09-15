@@ -14,15 +14,14 @@
 //auth rpoutes
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
-//register
-
 //any routes
 Route::get('/', 'HomeController@index');
 
+
 /* ROTAS DA SEÇÃO LOGO */
 Route::group(['prefix' => '/turma'], function(){
-  Route::get('/', 'TurmaController@index');
   /* Adição */
+  Route::get('/cadastrar', 'TurmaController@new');
   Route::post('/adicionar', 'TurmaController@store');
   /* edição */
   Route::post('/editar', 'TurmaController@update');

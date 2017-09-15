@@ -58,8 +58,7 @@
     %script{:src => "/js/plugins/jquery/jquery.min.js", :type => "text/javascript"}
     %script{:src => "/js/plugins/jquery/jquery-ui.min.js", :type => "text/javascript"}
     %script{:src => "/js/plugins/bootstrap/bootstrap.min.js", :type => "text/javascript"}
-
-    / END PLUGINS
+      / END PLUGINS
     / START THIS PAGE PLUGINS
     %script{:src => "/js/plugins/icheck/icheck.min.js", :type => "text/javascript"}
     %script{:src => "/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js", :type => "text/javascript"}
@@ -77,7 +76,9 @@
     %script{:src => "/js/plugins/bootstrap/bootstrap-file-input.js", :type => "text/javascript"}
     %script{:src => "/js/plugins/bootstrap/bootstrap-select.js", :type => "text/javascript"}
     %script{:src => "/js/plugins/tagsinput/jquery.tagsinput.min.js", :type => "text/javascript"}
+    %script{:src => "/js/plugins/bootstrap/bootstrap-timepicker.min.js", :type => "text/javascript"}
+    %script{:src => "/js/plugins/bootstrap/bootstrap-colorpicker.js", :type => "text/javascript"}
     / END THIS PAGE PLUGINS
-    / START TEMPLATE
+
     %script{:src => "/js/plugins.js", :type => "text/javascript"}
     %script{:src => "/js/actions.js", :type => "text/javascript"}

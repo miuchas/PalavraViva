@@ -2,12 +2,11 @@
 @section('link_caminho')
 %ul.breadcrumb
   %li
-    %a{:href => "#"} Home
+    %a{:href => "/"} Home
   %li
-    %a{:href => "#"} Forms Stuff
-  %li
-    %a{:href => "#"} Form Layout
-  %li.active One Column
+    %a{:href => "/turma/listar"} Turma
+  %li.active
+    Cadastrar Turma
 @endsection
 
 @section('corpo')
@@ -35,10 +34,17 @@
             .form-group
               %label.col-md-3.col-xs-12.control-label Modolo
               .col-md-6.col-xs-12
-                .input-group
-                  %span.input-group-addon
-                    %span.fa.fa-puzzle-piece
-                  %input.form-control{:type => "text", :name=>"modolo"}
+                %select.form-control.select{:name=>"modolo"}
+                  %option{ :value => "0" } 0
+                  %option{ :value => "1" } 1
+                  %option{ :value => "2" } 2
+                  %option{ :value => "3" } 3
+                  %option{ :value => "4" } 4
+                  %option{ :value => "5" } 5
+                  %option{ :value => "6" } 6
+                  %option{ :value => "7" } 7
+                  %option{ :value => "8" } 8
+                  %option{ :value => "9" } 9
                 %span.help-block Modolo de ensino da turma
 
             .form-group
@@ -57,11 +63,19 @@
             .form-group
               %label.col-md-3.col-xs-12.control-label Horario
               .col-md-6.col-xs-12
-                .input-group
+                .input-group.bootstrap-timepicker
                   %span.input-group-addon
-                    %span.fa.fa-clock-o
-                  %input.form-control{:type => "text", :name=>"horario"}
+                    %span.glyphicon.glyphicon-time
+                  %input.form-control.timepicker{:type => "text", :name=>"horario"}
                 %span.help-block Horario de aula da turma
+            -# .form-group
+            -#   %label.col-md-3.col-xs-12.control-label Horario
+            -#   .col-md-6.col-xs-12
+            -#     .input-group
+            -#       %span.input-group-addon
+            -#         %span.fa.fa-clock-o
+            -#       %input.form-control{:type => "text", :name=>"horario"}
+            -#     %span.help-block Horario de aula da turma
 
           .panel-footer
             %button.btn.btn-default Limpar formulario

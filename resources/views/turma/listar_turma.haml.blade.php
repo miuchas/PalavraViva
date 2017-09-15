@@ -2,33 +2,37 @@
 @section('link_caminho')
 %ul.breadcrumb
   %li
-    %a{:href => "#"} Home
-  %li
-    %a{:href => "#"} Forms Stuff
-  %li
-    %a{:href => "#"} Form Layout
-  %li.active One Column
+    %a{:href => "/"} Home
+  %li.active
+    Turma
 @endsection
 
 @section('corpo')
 .page-content-wrap
   .row
     .col-md-12
-      %form.form-horizontal{:action => "/turma/adicionar", :method => "post"}
-        .panel.panel-default
-          .panel-heading
-            %h3.panel-title
-              %strong Listar turmas
-          .panel-body
-            .list-group.border-bottom
-              -foreach( $turmas as $turma )
-                %a.list-group-item{:href => $turma->id}
+      .panel.panel-default
+        .panel-heading
+          %h3.panel-title
+            %strong Turmas
+        .panel-body
+          -foreach( $turmas as $turma )
+            .lista{ :style => "position: relative;" }
+              %a.list-group-item{:href => "/turma/listar/".$turma->id}
+                %span.contacts-title
+                  %strong
+                    =$turma->dia
+                %p
                   Turma do modolo
                   =$turma->modolo
                   \-
-                  =$turma->dia
-                  \-
                   =$turma->horario
+              .list-group-controls
+                %a.btn.btn-danger.btn-rounded{:href => "/turma/deletar/".$turma->id, :style => "margin: 5px;"}
+                  %span.fa.fa-trash-o{ :style => "margin-right: 0px;" }
+
+        .panel-footer
+          %a.btn.btn-default.pull-right{ :href => "/turma/cadastrar" } Cadastrar uma nova turma
 
 
 

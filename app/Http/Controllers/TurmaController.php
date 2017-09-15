@@ -7,28 +7,27 @@ use App\Turma;
 
 class TurmaController extends Controller
 {
-
   //midleware - validação de login
   public function __construct(){
     $this->middleware('auth');
   }
 
-  public function index(){
+  public function new(){
     return view('turma.formulario_turma');
   }
 
   public function store(){
     Turma::create(request([ 'contato_facebook', 'modolo', 'dia', 'horario' ]));
-    return redirect()->action('TurmaController@index');
+    return redirect()->action('TurmaController@list');
   }
 
   public function update(Turma $turma){
     Turma::create(request([ 'contato_facebook', 'modolo', 'dia', 'horario' ]));
-    return redirect()->action('TurmaController@index');
+    return redirect()->action('TurmaController@list');
   }
 
   public function list(){
-    $turmas = Turma::all();
+    $turmas = Turma::orderBy('modolo', 'asc')->get();
     return view('turma.listar_turma', compact('turmas'));
   }
 
@@ -38,6 +37,6 @@ class TurmaController extends Controller
 
   public function destroy(){
     Turma::create(request([ 'contato_facebook', 'modolo', 'dia', 'horario' ]));
-    return redirect()->action('TurmaController@index');
+    return redirect()->action('TurmaController@list');
   }
 }

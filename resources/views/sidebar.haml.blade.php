@@ -30,11 +30,11 @@
         %span.xn-text Turmas
       %ul
         %li
-          %a{:href => "#"}
+          %a{:href => "/turma/cadastrar"}
             %span.fa.fa-image
             Adicionar turma
         %li
-          %a{:href => "#"}
+          %a{:href => "/turma/listar"}
             %span.fa.fa-user
             Editar turmas
     %li.xn-openable
