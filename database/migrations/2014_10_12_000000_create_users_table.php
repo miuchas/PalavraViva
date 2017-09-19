@@ -27,12 +27,12 @@ class CreateUsersTable extends Migration
             $table->string('numero')->nullable();
             $table->string('complemento')->nullable();
             $table->string('telefone')->nullable();
-            $table->boolean('mostrar_contato')->default(true);
+            $table->boolean('mostrar_contato')->default(true);//mostrar facebook/telefone
             $table->boolean('bolsista')->default(false);
-            $table->integer('acesso')->default(0);
+            $table->integer('acesso')->default(0);//permissão
             $table->integer('porcentagem')->nullable();
-            $table->boolean('ativo')->default(1);
-            $table->boolean('confirmado')->default(0);
+            $table->boolean('ativo')->default(1);//não saiu da escola
+            $table->boolean('confirmado')->default(0);//não confirmou a matricula
             $table->integer('id_turma')->unsigned()->nullable();
             $table->rememberToken();
             $table->timestamps();
