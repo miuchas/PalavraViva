@@ -18,6 +18,7 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
+        // \App\Http\Middleware\Permicao::class,
     ];
 
     /**
@@ -56,5 +57,9 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'permicao_aluno' => \App\Http\Middleware\PermicaoAluno::class,
+        'permicao_estagiario' => \App\Http\Middleware\PermicaoEstagiario::class,
+        'permicao_professor' => \App\Http\Middleware\PermicaoProfessor::class,
+        'permicao_administrador' => \App\Http\Middleware\PermicaoAdministrador::class,
     ];
 }

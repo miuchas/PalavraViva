@@ -21,7 +21,7 @@ Route::get('/', 'HomeController@index');
 /* ROTAS DA SEÇÃO LOGO */
 Route::group(['prefix' => '/turma'], function(){
   /* Adição */
-  Route::get('/cadastrar', 'TurmaController@new');
+  Route::get('/cadastrar', 'TurmaController@new')->middleware('permicao_aluno');
   Route::post('/adicionar', 'TurmaController@store');
   /* edição */
   Route::post('/editar', 'TurmaController@update');
