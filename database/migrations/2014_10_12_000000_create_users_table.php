@@ -31,7 +31,8 @@ class CreateUsersTable extends Migration
             $table->boolean('bolsista')->default(false);
             $table->integer('acesso')->default(0);
             $table->integer('porcentagem')->nullable();
-            $table->boolean('ativo')->default(0);
+            $table->boolean('ativo')->default(1);
+            $table->boolean('confirmado')->default(0);
             $table->integer('id_turma')->unsigned()->nullable();
             $table->rememberToken();
             $table->timestamps();
