@@ -12,9 +12,9 @@ class Turma extends Model
   public function pegaTurmas(){
     /*
       faz uma query basica, ao chamar esta query no controler pode-se adicionar mais parametros
-      ex: turma::pegaTurmas()->where("dia", "segunda");
+      ex: Turma::pegaTurmas()->where("dia", "segunda");
     */
-    return  $query->get();
+    return $query->get();
   }
 
   public function usuarios(){
