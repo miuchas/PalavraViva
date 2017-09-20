@@ -28,7 +28,7 @@
                   \-
                   =$turma->horario
               .list-group-controls
-                %a.btn.btn-danger.btn-rounded{:href => "/turma/deletar/".$turma->id, :style => "margin: 5px;"}
+                %a.btn.btn-danger.btn-rounded{:href => "/turma/remover/".$turma->id, :style => "margin: 5px;"}
                   %span.fa.fa-trash-o{ :style => "margin-right: 0px;" }
 
         .panel-footer

@@ -13,7 +13,7 @@
 .page-content-wrap
   .row
     .col-md-12
-      %form.form-horizontal{:action => "/turma/adicionar", :method => "post"}
+      %form.form-horizontal{:action => "/turma/editar/".$turma->id, :method => "post"}
         .panel.panel-default
           .panel-heading
             %h3.panel-title
@@ -63,19 +63,11 @@
             .form-group
               %label.col-md-3.col-xs-12.control-label Horario
               .col-md-6.col-xs-12
-                .input-group.bootstrap-timepicker
+                .input-group
                   %span.input-group-addon
                     %span.glyphicon.glyphicon-time
-                  %input.form-control.timepicker24{:type => "text", :name=>"horario", :value=>$turma->contato_facebook}
-                %span.help-block Horario de aula da turma
-            -# .form-group
-            -#   %label.col-md-3.col-xs-12.control-label Horario
-            -#   .col-md-6.col-xs-12
-            -#     .input-group
-            -#       %span.input-group-addon
-            -#         %span.fa.fa-clock-o
-            -#       %input.form-control{:type => "text", :name=>"horario"}
-            -#     %span.help-block Horario de aula da turma
+                  %input.form-control{:type => "text", :name=>"horario", :value=>$turma->horario }
+                %span.help-block Horario de aula da turma (formato 00:00)
 
           .panel-footer
             %button.btn.btn-default Limpar formulario

@@ -24,10 +24,10 @@ Route::group(['prefix' => '/turma'], function(){
   Route::get('/cadastrar', 'TurmaController@new')->middleware('permicao_aluno');
   Route::post('/adicionar', 'TurmaController@store');
   /* edição */
-  Route::post('/editar', 'TurmaController@update');
+  Route::post('/editar/{turma?}', 'TurmaController@update');
   /* listagem */
   Route::get('/listar', 'TurmaController@list');
   Route::get('/listar/{turma?}', 'TurmaController@show');
   /* Exclusão */
-  Route::get('/remover/{id?}', 'TurmaController@destroy');
+  Route::get('/remover/{turma?}', 'TurmaController@destroy');
 });
