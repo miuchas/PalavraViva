@@ -4,7 +4,7 @@
   .row
     .col-md-3
     .col-md-6
-      %form.form-horizontal{:action => "register", :method => "post"}
+      %form.form-horizontal{:action => "register", :method => "post", :enctype => "multipart/form-data"}
         .panel.panel-default
           .panel-heading
             %h3.panel-title
@@ -74,8 +74,7 @@
               .col-md-6.col-xs-12
                 %a.file-input-wrapper.btn.btn-default.fileinput.btn-primary
                   %span Buscar Arquivo
-                  %input#filename.fileinput.btn-primary{:name => "filename", :style => "left: -179.25px; top: 8px;", :title => "Buscar Imagem", :type => "file"}
-                  %input.form-control.hidden{:type => "text", :name=>"imagem"}
+                  %input#filename.fileinput.btn-primary{:name => "imagem", :style => "left: -179.25px; top: 8px;", :title => "Buscar Imagem", :type => "file"}
                 %span.help-block Foto do perfil
 
           .panel-body

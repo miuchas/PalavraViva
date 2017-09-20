@@ -14,8 +14,8 @@
 //auth rpoutes
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
-//any routes
 Route::get('/', 'HomeController@index');
+//any routes
 
 
 /* ROTAS DA SEÇÃO LOGO */

@@ -6,6 +6,8 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Http\Controllers\GeneralController;
+use Input;
 
 class RegisterController extends Controller
 {
@@ -68,18 +70,23 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-          'name' => $data['name'],
-          'email' => $data['email'],
-          'password' => bcrypt($data['password']),
-          'cpf' => $data['cpf'],
-          'imagem' => $data['imagem'],
-          'cep' => $data['cep'],
-          'cidade' => $data['cidade'],
-          'rua' => $data['rua'],
-          'numero' => $data['numero'],
-          'complemento' => $data['complemento'],
-          'telefone' => $data['telefone']
-        ]);
+      $image_path = (new GeneralController)->salvaImagem(Input::file('imagem'), 'avatar/');
+      error_log(Input::file('imagem'));
+      error_log($image_path);
+
+      return User::create([
+        'name' => $data['name'],
+        'email' => $data['email'],
+        'password' => bcrypt($data['password']),
+        'cpf' => $data['cpf'],
+        'imagem' => $data['imagem'],
+        'cep' => $data['cep'],
+        'cidade' => $data['cidade'],
+        'rua' => $data['rua'],
+        'numero' => $data['numero'],
+        'complemento' => $data['complemento'],
+        'telefone' => $data['telefone'],
+        'imagem' => $image_path
+      ]);
     }
 }

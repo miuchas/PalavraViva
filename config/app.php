@@ -136,7 +136,6 @@ return [
     */
 
     'providers' => [
-
         /*
          * Laravel Framework Service Providers...
          */
@@ -178,6 +177,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         //custom Providers
         Bkwld\LaravelHaml\ServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class
 
     ],
 
@@ -193,7 +193,6 @@ return [
     */
 
     'aliases' => [
-
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,
@@ -227,6 +226,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Input' => Illuminate\Support\Facades\Input::class,
+        'Image' => Intervention\Image\Facades\Image::class,
 
     ],
 
