@@ -6,11 +6,6 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreatePortifolioAlunosTable extends Migration
 {
-  /**
-   * Run the migrations.
-   *
-   * @return void
-   */
   public function up()
   {
     Schema::create('portifolio_alunos', function (Blueprint $table) {
@@ -18,17 +13,9 @@ class CreatePortifolioAlunosTable extends Migration
       $table->integer('id_portifolio')->unsigned();
       $table->integer('id_usuario')->unsigned();
       $table->timestamps();
-
-      $table->foreign('id_portifolio')->references('id')->on('portifolio');
-      $table->foreign('id_usuario')->references('id')->on('users');
     });
   }
 
-  /**
-   * Reverse the migrations.
-   *
-   * @return void
-   */
   public function down()
   {
     Schema::drop('portifolio_alunos');

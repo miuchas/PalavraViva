@@ -6,11 +6,6 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateForumDaTurmaTable extends Migration
 {
-  /**
-   * Run the migrations.
-   *
-   * @return void
-   */
   public function up()
   {
     Schema::create('forum_da_turma', function (Blueprint $table) {
@@ -18,16 +13,9 @@ class CreateForumDaTurmaTable extends Migration
       $table->string('assunto');
       $table->integer('id_usuario')->unsigned();
       $table->timestamps();
-
-      $table->foreign('id_usuario')->references('id')->on('users');
     });
   }
 
-  /**
-   * Reverse the migrations.
-   *
-   * @return void
-   */
   public function down()
   {
     Schema::dropIfExists('forum_da_turma');

@@ -33,7 +33,4 @@
 
         .panel-footer
           %a.btn.btn-default.pull-right{ :href => "/turma/cadastrar" } Cadastrar uma nova turma
-
-
-
 @endsection

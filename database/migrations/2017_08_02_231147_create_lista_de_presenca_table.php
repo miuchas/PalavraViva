@@ -6,11 +6,6 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateListaDePresencaTable extends Migration
 {
-  /**
-   * Run the migrations.
-   *
-   * @return void
-   */
   public function up()
   {
     Schema::create('lista_de_presenca', function (Blueprint $table) {
@@ -19,16 +14,9 @@ class CreateListaDePresencaTable extends Migration
       $table->integer('id_turma')->unsigned()->nullable();
       $table->integer('id_usuario')->unsigned()->nullable();
       $table->timestamps();
-
-      $table->foreign('id_usuario')->references('id')->on('users');
     });
   }
 
-  /**
-   * Reverse the migrations.
-   *
-   * @return void
-   */
   public function down()
   {
     Schema::dropIfExists('lista_de_presenca');

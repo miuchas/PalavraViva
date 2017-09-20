@@ -6,11 +6,6 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateCobrancaTable extends Migration
 {
-  /**
-   * Run the migrations.
-   *
-   * @return void
-   */
   public function up()
   {
     Schema::create('cobranca', function (Blueprint $table) {
@@ -21,16 +16,9 @@ class CreateCobrancaTable extends Migration
       $table->boolean('pago')->default(false);
       $table->integer('id_aluno')->unsigned();
       $table->timestamps();
-
-      $table->foreign('id_aluno')->references('id')->on('users');
     });
   }
 
-  /**
-   * Reverse the migrations.
-   *
-   * @return void
-   */
   public function down()
   {
     Schema::drop('cobranca');
