@@ -6,29 +6,14 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-      $this->middleware('auth');
-    }
+  public function index()
+  {
+    return view('home.home');
+  }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-      return view('home.home');
-    }
-
-    public function logout(Request $request)
-    {
-      Auth::logout();
-      return redirect('/login');
-    }
+  public function logout(Request $request)
+  {
+    Auth::logout();
+    return redirect('/login');
+  }
 }

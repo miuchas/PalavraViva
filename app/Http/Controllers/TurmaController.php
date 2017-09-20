@@ -7,7 +7,6 @@ use App\Turma;
 
 class TurmaController extends Controller
 {
-  //midleware - validação de login
   public function __construct(){
     $this->middleware('auth');
   }
