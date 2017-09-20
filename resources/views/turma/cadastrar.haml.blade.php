@@ -28,7 +28,10 @@
                 .input-group
                   %span.input-group-addon
                     %span.fa.fa-facebook
-                  %input.form-control{:type => "text", :name=>"contato_facebook"}
+                  %input.form-control{:type => "text", :name=>"contato_facebook", :value =>  @old('contato_facebook'), :class => $errors->has('contato_facebook') ? "error" : ""}
+                -if( (count($errors) > 0) && ($errors->has('contato_facebook')) )
+                  %label#site-error.error{ :for => "contato_facebook"}
+                    =$errors->first('contato_facebook')
                 %span.help-block Link da Pagina/Grupo de facebook da turma
 
             .form-group
@@ -66,7 +69,10 @@
                 .input-group
                   %span.input-group-addon
                     %span.glyphicon.glyphicon-time
-                  %input.form-control{:type => "text", :name=>"horario"}
+                  %input.form-control{:type => "text", :maxlength => "5", :name=>"horario", :value =>  @old('horario'), :class => $errors->has('horario') ? "error" : ""}
+                -if( (count($errors) > 0) && ($errors->has('horario')) )
+                  %label#site-error.error{ :for => "horario"}
+                    =$errors->first('horario')
                 %span.help-block Horario de aula da turma (formato 00:00)
 
           .panel-footer
