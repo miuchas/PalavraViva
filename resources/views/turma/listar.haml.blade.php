@@ -4,7 +4,7 @@
   %li
     %a{:href => "/"} Home
   %li.active
-    Turma
+    Turmas
 @endsection
 
 @section('corpo')

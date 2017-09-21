@@ -4,7 +4,7 @@
   %li
     %a{:href => "/"} Home
   %li
-    %a{:href => "/turma/listar"} Turma
+    %a{:href => "/turma/listar"} Turmas
   %li.active
     Cadastrar Turma
 @endsection
