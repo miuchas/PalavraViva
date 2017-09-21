@@ -36,6 +36,14 @@
           %a{:href => "/turma/listar"}
             %span.fa.fa-user
             Editar turmas
+        %li
+          %a{:href => "/turma/troca-turma"}
+            %span.fa.fa-image
+            Requisitar troca de turma
+        %li
+          %a{:href => "/turma/aprovar-troca-turma"}
+            %span.fa.fa-image
+            Aprovar troca de turma
     %li.xn-openable
       %a{:href => "#"}
         %span.fa.fa-files-o

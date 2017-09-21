@@ -16,5 +16,5 @@ class Cobranca extends Model
         cobranca::inadimplente()->where("data", "<", Date.now());
     */
     return $query->where("pago", 0)->get();
-    }
+  }
 }
