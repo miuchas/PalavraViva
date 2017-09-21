@@ -12,8 +12,8 @@ class CreateTurmaTable extends Migration
       $table->increments('id');
       $table->string('contato_facebook');
     	$table->string('modolo');
-    	$table->string('dia');
-    	$table->string('horario');
+      $table->enum('dia', [ 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado', 'Domingo' ]);
+      $table->string('horario');
       $table->timestamps();
     });
   }
