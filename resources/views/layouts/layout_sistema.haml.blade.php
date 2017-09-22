@@ -16,10 +16,10 @@
 
     / START PAGE CONTAINER
     .page-container
-      @include('sidebar')
+      @include('sidebar.sidebar')
       / PAGE CONTENT
       .page-content
-        @include('topo')
+        @include('topo.topo')
 
         @yield('link_caminho')
         @yield('corpo')
