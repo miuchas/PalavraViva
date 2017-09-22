@@ -59,6 +59,7 @@ class TurmaController extends Controller
 
   public function createTrocaTurma(Request $request, User $user){
     $turma = Turma::find($request->turma);
+    $turmas = Turma::orderBy('modolo', 'asc')->get();
 
     DB::table('alerts')->insert([
       'tipo' => 'Requisicao',
@@ -70,7 +71,12 @@ class TurmaController extends Controller
       'id_usuario' => $user->id,
     ]);
 
-    return redirect()->action('TurmaController@list');
+    $alert = array(
+      "type"    => 'Confirmacao',
+      "message" => "Requisição de troca de turma efetuada com sucesso",
+    );
+
+    return view('turma.listar', compact('turmas','alert'));
   }
 
   public function adicionaUsuarioTurma(Alert $alert){

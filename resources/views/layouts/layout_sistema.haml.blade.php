@@ -6,7 +6,7 @@
     %meta{:content => "text/html; charset=US-ASCII", "http-equiv" => "Content-Type"}
     %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
-    %link{:href => "favicon.ico", :rel => "icon", :type => "image/x-icon"}
+    %link{:href => "/favicon.ico", :rel => "icon", :type => "image/x-icon"}
     / END META SECTION
     / CSS INCLUDE
     %link#theme{:href => "/css/theme-default.css", :rel => "stylesheet", :type => "text/css"}
@@ -22,12 +22,13 @@
         @include('topo.topo')
 
         @yield('link_caminho')
+
+        @include('alerts.alerts')
+
         @yield('corpo')
 
 
-      / END PAGE CONTENT
-    / END PAGE CONTAINER
-    / MESSAGE BOX
+    / MESSAGE BOX - logout
     #mb-signout.message-box.animated.fadeIn{"data-sound" => "alert"}
       .mb-container
         .mb-middle
