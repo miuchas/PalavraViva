@@ -13,8 +13,12 @@ class AlertController extends Controller
     return $alert->id;
   }
 
+  public function mostrarAlertasUsuario(){
+    return Alert::pegaAlertas()->where("id", Auth::user()->id);
+  }
+
   public function mostrarAlertas(){
-    Alert::pegaAlertas()->where("id", Auth::user()->id);
+    return Alert::pegaAlertas();
   }
 
   public function alertaDeConfirmacao($type, $message){
@@ -28,5 +32,26 @@ class AlertController extends Controller
 
     $alert = array( "type" => $type, "message" => $message, "class" => $class );
     return $alert;
+  }
+
+  public function listaTarefas(){
+    $class = "";
+    $alertas = (new AlertController)->mostrarAlertas();
+
+    switch ($type) {
+      case 'Requisicao':  $class = "progress-bar-success"; break;
+      case 'Notificacao': $class = "progress-bar-warning"; break;
+      case 'Confirmacao': $class = "progress-bar-danger" ; break;
+      case 'Alerta':      $class = "progress-bar-inative"; break;
+    }
+
+    $tarefas = array(
+      "type" => $type,
+      "message" => $message,
+      "class" => $class,
+      "numeroTarefas" => count($alertas),
+      "alerts" => $alertas,
+    );
+    return $tarefas;
   }
 }

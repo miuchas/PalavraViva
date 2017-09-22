@@ -11,6 +11,10 @@
           %img{:alt => "John Doe", :src => @Auth::user()->imagem }
         .profile-data
           .profile-data-name {{ Auth::user()->name }}
+    %li
+      %a{:href => "#"}
+        %span.fa.fa-desktop
+        %span.xn-text Informações Cadastrais
     %li.active
       %a{:href => "#"}
         %span.fa.fa-desktop
