@@ -2,11 +2,11 @@
   %a{:href => "#"}
     %span.fa.fa-tasks
   .informer.informer-warning 3
-  .panel.panel-primary.animated.zoomIn.xn-drop-left.xn-panel-dragging
+  .panel.panel-primary.animated.zoomIn.xn-drop-left
     .panel-heading
       %h3.panel-title
         %span.fa.fa-tasks
-        Tasks
+        Notificações
       .pull-right
         %span.label.label-warning 3 active
     .panel-body.list-group.scroll{:style => "height: 200px;"}

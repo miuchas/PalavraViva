@@ -71,11 +71,7 @@ class TurmaController extends Controller
       'id_usuario' => $user->id,
     ]);
 
-    $alert = array(
-      "type"    => 'Confirmacao',
-      "message" => "Requisição de troca de turma efetuada com sucesso",
-    );
-
+    $alert = (new AlertController)->alertaDeConfirmacao("Confirmacao", "Requisição de troca de turma efetuada com sucesso");
     return view('turma.listar', compact('turmas','alert'));
   }
 

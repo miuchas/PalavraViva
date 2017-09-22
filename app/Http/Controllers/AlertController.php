@@ -17,4 +17,16 @@ class AlertController extends Controller
     Alert::pegaAlertas()->where("id", Auth::user()->id);
   }
 
+  public function alertaDeConfirmacao($type, $message){
+    $class = "";
+    switch ($type) {
+      case 'Confirmacao': $class = "alert-success"; break;
+      case 'Notificacao': $class = "alert-info"   ; break;
+      case 'Requisicao':  $class = "alert-warning"; break;
+      case 'Alerta':      $class = "alert-danger" ; break;
+    }
+
+    $alert = array( "type" => $type, "message" => $message, "class" => $class );
+    return $alert;
+  }
 }
