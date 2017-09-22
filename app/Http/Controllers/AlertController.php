@@ -37,21 +37,24 @@ class AlertController extends Controller
   public function listaTarefas(){
     $class = "";
     $alertas = (new AlertController)->mostrarAlertas();
+    $tarefas = [];
 
-    switch ($type) {
-      case 'Requisicao':  $class = "progress-bar-success"; break;
-      case 'Notificacao': $class = "progress-bar-warning"; break;
-      case 'Confirmacao': $class = "progress-bar-danger" ; break;
-      case 'Alerta':      $class = "progress-bar-inative"; break;
+    foreach( $turmas as $turma ){
+      switch ($type) {
+        case 'Requisicao':  $class = "progress-bar-success"; break;
+        case 'Notificacao': $class = "progress-bar-warning"; break;
+        case 'Confirmacao': $class = "progress-bar-danger" ; break;
+        case 'Alerta':      $class = "progress-bar-inative"; break;
+      }
+
+      $tarefas = array(
+        "type" => $type,
+        "message" => $message,
+        "class" => $class,
+        "numeroTarefas" => count($alertas),
+        "alerts" => $alertas,
+      );
     }
-
-    $tarefas = array(
-      "type" => $type,
-      "message" => $message,
-      "class" => $class,
-      "numeroTarefas" => count($alertas),
-      "alerts" => $alertas,
-    );
     return $tarefas;
   }
 }
