@@ -16,7 +16,8 @@ class CreateForeignKeys extends Migration
     });
 
     Schema::table('contato', function (Blueprint $table) {
-      $table->foreign('id_usuario')->references('id')->on('users')->onDelete('cascade');
+      $table->foreign('id_usuario_atual')->references('id')->on('users')->onDelete('cascade');
+      $table->foreign('id_usuario_destino')->references('id')->on('users')->onDelete('cascade');
     });
 
     Schema::table('monitores', function (Blueprint $table) {
@@ -54,7 +55,7 @@ class CreateForeignKeys extends Migration
       $table->foreign('id_topico')->references('id')->on('posts_do_forum')->onDelete('cascade');
     });
   }
-  
+
   /**
    *Deleta as chaves estrangeiras das tabelas
   */
