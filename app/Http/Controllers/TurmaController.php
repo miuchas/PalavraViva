@@ -58,16 +58,20 @@ class TurmaController extends Controller
   }
 
   public function createTrocaTurma(Request $request, User $user){
+    $this->validate(request(), [
+      'obs' => 'required|string',
+    ]);
+
     $turma = Turma::find($request->turma);
     $turmas = Turma::orderBy('modolo', 'asc')->get();
 
     DB::table('alerts')->insert([
       'tipo' => 'Requisicao',
-      'descricao_basica' => 0,
+      'descricao_basica' => $user->name." requisitou troca de turma para a turma de ".$turma->dia." - modolo ".$turma->modolo." - ".$turma->horario,
       'obs' => $request->obs,
       'comando' => $user->id .'|'. $turma->id,
-      'confirmacao' => $user->name." requisitou troca de turma para a turma de ".$turma->dia." - modolo ".$turma->modolo." - ".$turma->horario,
-      'visualizacao' => '',
+      'confirmacao' => 0,
+      'visualizacao' => 0,
       'id_usuario' => $user->id,
     ]);
 
@@ -83,6 +87,9 @@ class TurmaController extends Controller
   }
 
   public function aprovarTrocaTurma(){}
-  public function listaAprovarTrocaTurma(){}
+  public function listaAprovarTrocaTurma(){
+    $alerts = Alert::pegaRequisicoes();
+    return view('turma.lista_troca_turma', compact('alerts'));
+  }
 
 }

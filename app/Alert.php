@@ -9,7 +9,7 @@ class Alert extends Model
   protected $table = 'alerts';
   protected $fillable = ['tipo', 'descricao_basica', 'obs', 'comando', 'confirmacao', 'visualizacao', 'id_usuario'];
 
-  public function pegaAlertas(){
+  public function pegaAlertas($query){
     /*
       faz uma query basica, ao chamar esta query no controler pode-se adicionar mais parametros
       ex: Biblioteca::pegaTextos()->where("dia", "segunda");
@@ -17,7 +17,7 @@ class Alert extends Model
     return $query->get();
   }
 
-  public function pegaRequisicoes(){
+  public function pegaRequisicoes($query){
     /*
       faz uma query basica, ao chamar esta query no controler pode-se adicionar mais parametros
       ex:
