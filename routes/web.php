@@ -27,7 +27,7 @@ Route::group(['prefix' => '/turma'], function(){
   /* edição */
   Route::post('/editar/{turma?}', 'TurmaController@update');
   Route::post('/troca-turma/{user?}', 'TurmaController@createTrocaTurma');
-  Route::post('/aprovar-troca-turma/{user?}', 'TurmaController@aprovarTrocaTurma');
+  Route::post('/aprovar-troca-turma/{alert?}', 'TurmaController@aprovarTrocaTurma');
   /* listagem */
   Route::get('/listar', 'TurmaController@list');
   Route::get('/listar/{turma?}', 'TurmaController@show');
@@ -35,4 +35,5 @@ Route::group(['prefix' => '/turma'], function(){
   Route::get('/aprovar-troca-turma', 'TurmaController@listaAprovarTrocaTurma');
   /* Exclusão */
   Route::get('/remover/{turma?}', 'TurmaController@destroy');
+  Route::get('/remover/remove-troca-turma/{alert?}', 'TurmaController@destroyTrocaTurma');
 });

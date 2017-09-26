@@ -19,16 +19,18 @@
         .panel-body
           -foreach( $alerts as $alert )
             .lista{ :style => "position: relative;" }
-              %a.list-group-item{:href => "/turma/listar/".$alert->id}
+              %a.list-group-item{:href => "/turma/aprovar-troca-turma/".$alert->id}
                 %span.contacts-title
                   %strong
                     =$alert->tipo
                 %p
                   =$alert->descricao_basica
-                %p
-                  =$alert->obs
+                -if ( $alert->obs != "" )
+                  %p
+                    Obs.:
+                    =$alert->obs
               .list-group-controls
-                %a.btn.btn-danger.btn-rounded{:href => "/turma/remover/".$alert->id, :style => "margin: 5px;"}
+                %a.btn.btn-danger.btn-rounded{:href => "/turma/remove-troca-turma/".$alert->id, :style => "margin: 5px;"}
                   %span.fa.fa-trash-o{ :style => "margin-right: 0px;" }
 
         .panel-footer

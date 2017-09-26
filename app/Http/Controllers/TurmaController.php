@@ -14,6 +14,7 @@ class TurmaController extends Controller
     $this->middleware('auth');
   }
 
+  /*----------------------------------ADIÇÂO----------------------------------*/
   public function new(){
     return view('turma.cadastrar');
   }
@@ -26,35 +27,6 @@ class TurmaController extends Controller
 
     Turma::create(request([ 'contato_facebook', 'modolo', 'dia', 'horario' ]));
     return redirect()->action('TurmaController@list');
-  }
-
-  public function update(Turma $turma){
-    $this->validate(request(), [
-      'contato_facebook' => 'required|string',
-      'horario' => 'required|string|max:5',
-    ]);
-
-    Turma::where('id', $turma->id)->update(request(['contato_facebook', 'modolo', 'dia', 'horario' ]));
-    return redirect()->action('TurmaController@list');
-  }
-
-  public function list(){
-    $turmas = Turma::orderBy('modolo', 'asc')->get();
-    return view('turma.listar', compact('turmas'));
-  }
-
-  public function show(Turma $turma){
-    return view('turma.editar', compact('turma'));
-  }
-
-  public function destroy($turma){
-    Turma::destroy($turma);
-    return redirect()->action('TurmaController@list');
-  }
-
-  public function showTrocaTurma(){
-    $turmas = Turma::orderBy('modolo', 'asc')->get();
-    return view('turma.troca_turma', compact('turmas'));
   }
 
   public function createTrocaTurma(Request $request, User $user){
@@ -79,21 +51,59 @@ class TurmaController extends Controller
     return view('turma.listar', compact('turmas','alert'));
   }
 
-  // public function adicionaUsuarioTurma(Alert $alert){
-  //   $id_turma = explode("|",$alert->comando)[1];
-  //
-  //   Alert::where('id', $alert->id)->update(["confirmacao", '1']);
-  //   User::where('id', $alert->id_usuario)->update([ "turma_id", intval($id_turma) ]);
-  // }
+  /*----------------------------------EDIÇÂO----------------------------------*/
+  public function update(Turma $turma){
+    $this->validate(request(), [
+      'contato_facebook' => 'required|string',
+      'horario' => 'required|string|max:5',
+    ]);
 
-  // public function aprovarTrocaTurma(){
-  //
-  // }
+    Turma::where('id', $turma->id)->update(request(['contato_facebook', 'modolo', 'dia', 'horario' ]));
+    return redirect()->action('TurmaController@list');
+  }
+
+  public function aprovarTrocaTurma(Alert $alert){
+    (new AlertController)->adicionaUsuarioTurma();
+
+    $id_turma = explode("|",$alert->comando)[1];
+
+    Alert::where('id', $alert->id)->update(["confirmacao", '1']);
+    User::where('id', $alert->id_usuario)->update([ "turma_id", intval($id_turma) ]);
+
+    $alert = (new AlertController)->alertaDeConfirmacao("Confirmacao", "Troca de turma efetuada com sucesso");
+    return view('turma.listar', compact('turmas','alert'));
+  }
+
+  /*---------------------------------LISTAGEM---------------------------------*/
+  public function list(){
+    $turmas = Turma::orderBy('modolo', 'asc')->get();
+    return view('turma.listar', compact('turmas'));
+  }
+
+  public function show(Turma $turma){
+    return view('turma.editar', compact('turma'));
+  }
+
+  public function showTrocaTurma(){
+    $turmas = Turma::orderBy('modolo', 'asc')->get();
+    return view('turma.troca_turma', compact('turmas'));
+  }
 
   public function listaAprovarTrocaTurma(){
-    // $alerts = Alert::pegaRequisicoes();
-    // return view('turma.lista_troca_turma', compact('alerts'));
+    $alerts = Alert::pegaRequisicoes();
+    return view('turma.lista_troca_turma', compact('alerts'));
+  }
+
+  /*---------------------------------EXCLUSÂO---------------------------------*/
+  public function destroy($turma){
+    Turma::destroy($turma);
     return redirect()->action('TurmaController@list');
+  }
+
+  public function destroyTrocaTurma(Alert $alert){
+    Alert::destroy($alert);
+    $alert = (new AlertController)->alertaDeConfirmacao("Confirmacao", "Troca de turma excluida com sucesso");
+    return view('turma.listar', compact('turmas','alert'));
   }
 
 }
