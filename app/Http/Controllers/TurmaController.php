@@ -79,17 +79,21 @@ class TurmaController extends Controller
     return view('turma.listar', compact('turmas','alert'));
   }
 
-  public function adicionaUsuarioTurma(Alert $alert){
-    $id_turma = explode("|",$alert->comando)[1];
+  // public function adicionaUsuarioTurma(Alert $alert){
+  //   $id_turma = explode("|",$alert->comando)[1];
+  //
+  //   Alert::where('id', $alert->id)->update(["confirmacao", '1']);
+  //   User::where('id', $alert->id_usuario)->update([ "turma_id", intval($id_turma) ]);
+  // }
 
-    Alert::where('id', $alert->id)->update(["confirmacao", '1']);
-    User::where('id', $alert->id_usuario)->update([ "turma_id", intval($id_turma) ]);
-  }
+  // public function aprovarTrocaTurma(){
+  //
+  // }
 
-  public function aprovarTrocaTurma(){}
   public function listaAprovarTrocaTurma(){
-    $alerts = Alert::pegaRequisicoes();
-    return view('turma.lista_troca_turma', compact('alerts'));
+    // $alerts = Alert::pegaRequisicoes();
+    // return view('turma.lista_troca_turma', compact('alerts'));
+    return redirect()->action('TurmaController@list');
   }
 
 }

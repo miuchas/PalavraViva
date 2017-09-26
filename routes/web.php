@@ -11,15 +11,16 @@
 |
 */
 
-//auth rpoutes
+//auth routes
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@index');
-//any routes
 
 
-/* ROTAS DA SEÇÃO LOGO */
+/* ROTAS DA TURMA */
 Route::group(['prefix' => '/turma'], function(){
+  /* Index */
+  Route::get('/', 'TurmaController@list');
   /* Adição */
   Route::get('/cadastrar', 'TurmaController@new')->middleware('permicao_aluno');
   Route::post('/adicionar', 'TurmaController@store');
