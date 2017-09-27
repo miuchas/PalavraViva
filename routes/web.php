@@ -32,7 +32,7 @@ Route::group(['prefix' => '/turma'], function(){
   Route::get('/listar', 'TurmaController@list');
   Route::get('/listar/{turma?}', 'TurmaController@show');
   Route::get('/troca-turma', 'TurmaController@showTrocaTurma');
-  Route::get('/aprovar-troca-turma', 'TurmaController@listaAprovarTrocaTurma');
+  Route::get('/listar-troca-turma', 'TurmaController@listaAprovarTrocaTurma');
   /* Exclusão */
   Route::get('/remover/{turma?}', 'TurmaController@destroy');
   Route::get('/remover/remove-troca-turma/{alert?}', 'TurmaController@destroyTrocaTurma');

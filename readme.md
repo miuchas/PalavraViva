@@ -6,6 +6,19 @@ Ao copiar o projeto
 - npm install
 - composer install
 
+## Usar função scope nos models
+
+A função deve possuir o prefixo scope e ser declarada em camelcase
+Ex.:
+  public function scopePegaUsuariosAtivos($query){
+    return $query->where("usuario", "ativo")->get();
+  }
+Essa função cria uma query basica que define parametros iniciais para facilitar a consulta
+quando a função for chamada ela deve ser chamada sem o scope e começando o camel a partir da proxima letra
+
+Ex.:
+  Usuario::pegaUsuariosAtivos();
+
 **Compilador css/js diretamente pelo npm**
 - npm run watch
 

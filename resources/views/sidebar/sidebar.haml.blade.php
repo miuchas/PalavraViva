@@ -45,7 +45,7 @@
             %span.fa.fa-image
             Requisitar troca de turma
         %li
-          %a{:href => "/turma/aprovar-troca-turma"}
+          %a{:href => "/turma/listar-troca-turma"}
             %span.fa.fa-image
             Aprovar troca de turma
     %li.xn-openable
