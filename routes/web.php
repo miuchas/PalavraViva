@@ -27,7 +27,7 @@ Route::group(['prefix' => '/turma'], function(){
   /* edição */
   Route::post('/editar/{turma?}', 'TurmaController@update');
   Route::post('/troca-turma/{user?}', 'TurmaController@createTrocaTurma');
-  Route::post('/aprovar-troca-turma/{alert?}', 'TurmaController@aprovarTrocaTurma');
+  Route::get('/aprovar-troca-turma/{alert?}', 'TurmaController@aprovarTrocaTurma');
   /* listagem */
   Route::get('/listar', 'TurmaController@list');
   Route::get('/listar/{turma?}', 'TurmaController@show');

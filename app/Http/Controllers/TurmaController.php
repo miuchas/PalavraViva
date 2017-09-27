@@ -63,14 +63,14 @@ class TurmaController extends Controller
   }
 
   public function aprovarTrocaTurma(Alert $alert){
-    (new AlertController)->adicionaUsuarioTurma();
-
     $comand = explode("|",$alert->comando);
 
-    Alert::where('id', $alert->id)->update(["confirmacao", '1']);
-    User::where('id', intval($comand[0]))->update([ "turma_id", intval($comand[1]) ]);
+    Alert::where('id', $alert->id)->update(["confirmacao" => 1]);
+    User::where('id', intval($comand[0]))->update([ "id_turma" => intval($comand[1]) ]);
 
+    $turmas = Turma::orderBy('modolo', 'asc')->get();
     $alert = (new AlertController)->alertaDeConfirmacao("Confirmacao", "Troca de turma efetuada com sucesso");
+
     return view('turma.listar', compact('turmas','alert'));
   }
 
