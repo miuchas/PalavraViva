@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Alert extends Model
 {
   protected $table = 'alerts';
-  protected $fillable = ['tipo', 'descricao_basica', 'obs', 'comando', 'confirmacao', 'visualizacao', 'id_usuario'];
+  protected $fillable = ['tipo', 'descricao_basica', 'obs', 'comando', 'confirmacao', 'visualizacao', 'user_id'];
 
   public function scopePegaAlertas($query){
     return $query->get();

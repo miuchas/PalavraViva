@@ -12,7 +12,7 @@ class CreateGaleriaPortifolioTable extends Migration
       $table->increments('id');
     	$table->string('imagem');
     	$table->string('descricao')->nullable();
-      $table->integer('id_portifolio')->unsigned();
+      $table->integer('portifolio_id')->unsigned();
       $table->timestamps();
     });
   }

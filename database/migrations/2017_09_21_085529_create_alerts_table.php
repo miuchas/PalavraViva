@@ -16,7 +16,7 @@ class CreateAlertsTable extends Migration
       $table->string('comando'); // passar um comando a ser executado ex.: <nome_comando>TrocaTurma|<usuario_id>|<turma_id>
       $table->boolean('confirmacao');//necessita de confirmação para executar a ação
       $table->boolean('visualizacao');//confirmar visualização (apenas alertas rotineiros)
-      $table->integer('id_usuario');
+      $table->integer('user_id');
       $table->timestamps();
     });
   }

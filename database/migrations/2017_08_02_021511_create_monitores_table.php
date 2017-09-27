@@ -10,8 +10,8 @@ class CreateMonitoresTable extends Migration
   {
     Schema::create('monitores', function (Blueprint $table) {
       $table->increments('id');
-      $table->integer('id_usuario')->unsigned();
-    	$table->integer('id_turma')->unsigned();
+      $table->integer('user_id')->unsigned();
+    	$table->integer('turma_id')->unsigned();
       $table->timestamps();
     });
   }

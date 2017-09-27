@@ -28,7 +28,7 @@ class CreateUsersTable extends Migration
       $table->integer('porcentagem')->nullable();
       $table->boolean('ativo')->default(1);//não saiu da escola
       $table->boolean('confirmado')->default(0);//não confirmou a matricula
-      $table->integer('id_turma')->unsigned()->nullable();
+      $table->integer('turma_id')->unsigned()->nullable();
       $table->rememberToken();
       $table->timestamps();
     });

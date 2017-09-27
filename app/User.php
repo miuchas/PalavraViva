@@ -13,7 +13,7 @@ class User extends Authenticatable
       'name', 'email', 'password',
       'reseta_senha', 'cpf', 'imagem', 'cep', 'cidade', 'rua', 'numero',
       'complemento', 'telefone', 'mostrar_contato', 'bolsista', 'acesso',
-      'porcentagem', 'id_turma', 'ativo', 'confirmado',
+      'porcentagem', 'turma_id', 'ativo', 'confirmado',
     ];
 
     protected $hidden = [

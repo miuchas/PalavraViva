@@ -11,8 +11,9 @@ class CreatePostsDoForumTable extends Migration
     Schema::create('posts_do_forum', function (Blueprint $table) {
       $table->increments('id');
       $table->string('mensagem');
-      $table->integer('id_usuario')->unsigned();
-      $table->integer('id_topico')->unsigned();
+      $table->integer('user_id')->unsigned();
+      $table->integer('postsite_id')->unsigned();
+      $table->integer('postforum_id')->unsigned();
       $table->timestamps();
     });
   }

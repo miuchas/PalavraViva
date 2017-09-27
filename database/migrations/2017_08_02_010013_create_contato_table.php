@@ -12,7 +12,7 @@ class CreateContatoTable extends Migration
       $table->increments('id');
       $table->string('descricao_contato');
       $table->string('contato');
-      $table->integer('id_usuario_atual')->unsigned();
+      $table->integer('user_id')->unsigned();
       $table->integer('id_usuario_destino')->unsigned();
       $table->timestamps();
     });

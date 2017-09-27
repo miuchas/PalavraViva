@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Monitores extends Model
 {
   protected $table = 'monitores';
-  protected $fillable = ['id_usuario', 'id_turma'];
+  protected $fillable = ['user_id', 'turma_id'];
 
   public function scopePegaTurmas(){
     return $query->get();

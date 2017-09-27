@@ -12,47 +12,48 @@ class CreateForeignKeys extends Migration
   public function up()
   {
     Schema::table('users', function (Blueprint $table) {
-      $table->foreign('id_turma')->references('id')->on('turma')->onDelete('cascade');
+      $table->foreign('turma_id')->references('id')->on('turma')->onDelete('cascade');
     });
 
     Schema::table('contato', function (Blueprint $table) {
-      $table->foreign('id_usuario_atual')->references('id')->on('users')->onDelete('cascade');
+      $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
       $table->foreign('id_usuario_destino')->references('id')->on('users')->onDelete('cascade');
     });
 
     Schema::table('monitores', function (Blueprint $table) {
-      $table->foreign('id_usuario')->references('id')->on('users')->onDelete('cascade');
-      $table->foreign('id_turma')->references('id')->on('turma')->onDelete('cascade');
+      $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+      $table->foreign('turma_id')->references('id')->on('turma')->onDelete('cascade');
     });
 
     Schema::table('galeria_portifolio', function (Blueprint $table) {
-      $table->foreign('id_portifolio')->references('id')->on('portifolio')->onDelete('cascade');
+      $table->foreign('portifolio_id')->references('id')->on('portifolio')->onDelete('cascade');
     });
 
     Schema::table('portifolio_alunos', function (Blueprint $table) {
-      $table->foreign('id_portifolio')->references('id')->on('portifolio')->onDelete('cascade');
-      $table->foreign('id_usuario')->references('id')->on('users')->onDelete('cascade');
+      $table->foreign('portifolio_id')->references('id')->on('portifolio')->onDelete('cascade');
+      $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
     });
 
     Schema::table('cobranca', function (Blueprint $table) {
-      $table->foreign('id_aluno')->references('id')->on('users')->onDelete('cascade');
+      $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
     });
 
     Schema::table('lista_de_presenca', function (Blueprint $table) {
-      $table->foreign('id_usuario')->references('id')->on('users')->onDelete('cascade');
+      $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
     });
 
     Schema::table('forum_da_turma', function (Blueprint $table) {
-      $table->foreign('id_usuario')->references('id')->on('users')->onDelete('cascade');
+      $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
     });
 
     Schema::table('posts_do_site', function (Blueprint $table) {
-      $table->foreign('id_usuario')->references('id')->on('users')->onDelete('cascade');
+      $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
     });
 
     Schema::table('posts_do_forum', function (Blueprint $table) {
-      $table->foreign('id_usuario')->references('id')->on('users')->onDelete('cascade');
-      $table->foreign('id_topico')->references('id')->on('posts_do_forum')->onDelete('cascade');
+      $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+      $table->foreign('postforum_id')->references('id')->on('posts_do_forum')->onDelete('cascade');
+      $table->foreign('postsite_id')->references('id')->on('posts_do_site')->onDelete('cascade');
     });
   }
 

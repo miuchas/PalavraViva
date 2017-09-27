@@ -44,7 +44,7 @@ class TurmaController extends Controller
       'comando' => $user->id .'|'. $turma->id,
       'confirmacao' => 0,
       'visualizacao' => 0,
-      'id_usuario' => $user->id,
+      'user_id' => $user->id,
     ]);
 
     $alert = (new AlertController)->alertaDeConfirmacao("Confirmacao", "Requisição de troca de turma efetuada com sucesso");
@@ -66,7 +66,7 @@ class TurmaController extends Controller
     $comand = explode("|",$alert->comando);
 
     Alert::where('id', $alert->id)->update(["confirmacao" => 1]);
-    User::where('id', intval($comand[0]))->update([ "id_turma" => intval($comand[1]) ]);
+    User::where('id', intval($comand[0]))->update([ "turma_id" => intval($comand[1]) ]);
 
     $turmas = Turma::orderBy('modolo', 'asc')->get();
     $alert = (new AlertController)->alertaDeConfirmacao("Confirmacao", "Troca de turma efetuada com sucesso");

@@ -10,8 +10,8 @@ class CreatePortifolioAlunosTable extends Migration
   {
     Schema::create('portifolio_alunos', function (Blueprint $table) {
       $table->increments('id');
-      $table->integer('id_portifolio')->unsigned();
-      $table->integer('id_usuario')->unsigned();
+      $table->integer('portifolio_id')->unsigned();
+      $table->integer('user_id')->unsigned();
       $table->timestamps();
     });
   }
