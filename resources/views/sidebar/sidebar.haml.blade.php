@@ -5,12 +5,16 @@
       %a.x-navigation-control{:href => "#"}
     %li.xn-profile
       %a.profile-mini{:href => "#"}
-        %img{:alt => "John Doe", :src => @Auth::user()->imagem }
+        %img{:alt => @Auth::user()->name, :src => @Auth::user()->imagem }
       .profile
         .profile-image
-          %img{:alt => "John Doe", :src => @Auth::user()->imagem }
+          %img{:alt => @Auth::user()->name, :src => @Auth::user()->imagem }
         .profile-data
           .profile-data-name {{ Auth::user()->name }}
+    %li
+      %a{:href => "#"}
+        %span.fa.fa-desktop
+        %span.xn-text Home
     %li
       %a{:href => "#"}
         %span.fa.fa-desktop
@@ -19,6 +23,15 @@
       %a{:href => "#"}
         %span.fa.fa-desktop
         %span.xn-text Portifólio
+      %ul
+        %li
+          %a{:href => "#"}
+            %span.fa.fa-image
+            Adicionar eventos
+        %li
+          %a{:href => "#"}
+            %span.fa.fa-image
+            Consultar eventos
     %li
       %a{:href => "#"}
         %span.fa.fa-desktop
@@ -36,6 +49,10 @@
           %a{:href => "/turma/cadastrar"}
             %span.fa.fa-image
             Adicionar turma
+        %li
+          %a{:href => "/turma/listar"}
+            %span.fa.fa-user
+            Ver turma
         %li
           %a{:href => "/turma/listar"}
             %span.fa.fa-user
@@ -81,12 +98,12 @@
       %ul
         %li
           %a{:href => "#"}
-            %span.fa.fa-image
-            Cadastra textos
+            %span.fa.fa-user
+            Buscar textos
         %li
           %a{:href => "#"}
-            %span.fa.fa-user
-            Verificar pendencias
+            %span.fa.fa-image
+            Cadastra textos
     %li.xn-openable
       %a{:href => "#"}
         %span.fa.fa-files-o
@@ -96,3 +113,7 @@
           %a{:href => "#"}
             %span.fa.fa-image
             Forum da turma
+    %li
+      %a{:href => "#"}
+        %span.fa.fa-desktop
+        %span.xn-text Contato

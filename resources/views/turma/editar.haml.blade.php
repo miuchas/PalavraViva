@@ -74,7 +74,7 @@
                   %label#site-error.error{ :for => "horario"}
                     =$errors->first('horario')
                 %span.help-block Horario de aula da turma (formato 00:00)
-
+          =$turma->usuarios
           .panel-footer
             %button.btn.btn-default Limpar formulario
             %button.btn.btn-primary.pull-right Confirmar
