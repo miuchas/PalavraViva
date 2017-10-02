@@ -19,7 +19,33 @@
       %a{:href => "#"}
         %span.fa.fa-desktop
         %span.xn-text Informações Cadastrais
-    %li.active
+    %li
+      %a{:href => "#"}
+        %span.fa.fa-desktop
+        %span.xn-text Verificar cobrança
+      %ul
+        %li
+          %a{:href => "#"}
+            %span.fa.fa-image
+            Gerar cobrança
+        %li
+          %a{:href => "#"}
+            %span.fa.fa-image
+            Verificar pendências
+    %li.xn-openable
+      %a{:href => "#"}
+        %span.fa.fa-desktop
+        %span.xn-text Trocar permissão
+      %ul
+        %li
+          %a{:href => "#"}
+            %span.fa.fa-image
+            Tornar Monitor
+        %li
+          %a{:href => "#"}
+            %span.fa.fa-image
+            Tornar Professor
+    %li.xn-openable
       %a{:href => "#"}
         %span.fa.fa-desktop
         %span.xn-text Portifólio
@@ -32,14 +58,6 @@
           %a{:href => "#"}
             %span.fa.fa-image
             Consultar eventos
-    %li
-      %a{:href => "#"}
-        %span.fa.fa-desktop
-        %span.xn-text Verificar cobrança
-    %li
-      %a{:href => "#"}
-        %span.fa.fa-desktop
-        %span.xn-text Trocar permissão
     %li.xn-openable
       %a{:href => "#"}
         %span.fa.fa-files-o
