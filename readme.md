@@ -28,6 +28,11 @@ Ex.:
 - monitor - 1
 - aluno - 0
 
+
+tema inicial
+https://www.themezy.com/demos/165-brandy-portfolio-responsive-bootstrap-template
+
+
 <!--
   Regras:
   turma
